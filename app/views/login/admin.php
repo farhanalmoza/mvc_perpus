@@ -36,7 +36,7 @@
 
                             <!-- Register buttons -->
                             <div class="text-center">
-                                <p>Not a member? <a href="#!">Register</a></p>
+                                <p>Not a member? <a href="<?= BASEURL; ?>/register/admin">Register</a></p>
                                 
                             </div>
                         </form>
