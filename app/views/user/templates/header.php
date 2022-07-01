@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title><?= $data['judul']; ?> - Admin</title>
+        <title><?= $data['judul']; ?> - User</title>
         
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="<?= BASEURL; ?>/css/sidebar.css" rel="stylesheet" />
@@ -16,10 +16,10 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light">Perpustakaan SI</div>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= BASEURL; ?>/admin">Dashboard</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= BASEURL; ?>/admin/daftar_anggota">Anggota</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= BASEURL; ?>/admin/daftar_buku">Buku</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= BASEURL; ?>/admin/daftar_peminjaman">Peminjaman</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= BASEURL; ?>/user">Dashboard</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= BASEURL; ?>/user/daftar_buku">Daftar Buku</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= BASEURL; ?>/user/buku_dipinjam">Buku Dipinjam</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?= BASEURL; ?>/user/riwayat_peminjaman">Riwayat Peminjaman</a>
                 </div>
             </div>
             <!-- Page content wrapper-->
@@ -35,7 +35,7 @@
                                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <!-- tombol logout -->
-                                        <a class="dropdown-item" href="<?= BASEURL; ?>/auth/admin_logout">Logout</a>
+                                        <a class="dropdown-item" href="<?= BASEURL; ?>/auth/user_logout">Logout</a>
                                     </div>
                                 </li>
                             </ul>

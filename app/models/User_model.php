@@ -35,6 +35,17 @@ class User_model {
         return $this->db->rowCount();
     }
 
+    public function loginUser($email, $password)
+    {
+        $query = "SELECT * FROM " . $this->table . " WHERE email = :email AND password = :password";
+        $this->db->query($query);
+        $this->db->bind('email', $email);
+        $this->db->bind('password', $password);
+
+        $this->db->execute();
+        return $this->db->single();
+    }
+
     public function hapusAnggota($id)
     {
         $this->db->query('DELETE FROM ' . $this->table . ' WHERE id = :id');
