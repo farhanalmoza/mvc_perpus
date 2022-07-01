@@ -19,6 +19,16 @@ class User extends Controller {
         $this->view('user/templates/footer');
     }
 
+    public function riwayat_peminjaman()
+    {
+        session_start();
+        $data['judul'] = 'Riwayat Peminjaman';
+        $data['peminjaman'] = $this->model('Peminjaman_model')->getAllPeminjamanByUser($_SESSION['user']['id']);
+        $this->view('user/templates/header', $data);
+        $this->view('user/riwayat_peminjaman', $data);
+        $this->view('user/templates/footer');
+    }
+
     public function pinjam($id_buku)
     {
         session_start();

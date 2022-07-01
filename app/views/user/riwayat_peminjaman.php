@@ -12,7 +12,7 @@
                         <th>Peminjam</th>
                         <th>Buku</th>
                         <th>Tanggal Peminjaman</th>
-                        <th>Aksi</th>
+                        <th>Tanggal Pengembalian</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,11 +23,7 @@
                             <td><?= $pmj['nama']; ?></td>
                             <td><?= $pmj['judul']; ?></td>
                             <td><?= $pmj['tgl_pinjam']; ?></td>
-                            <td>
-                                <?php if ($pmj['status'] == 1) : ?>
-                                    <a href="<?= BASEURL; ?>/admin/konfirmasi_pengembalian/<?= $pmj['id_peminjaman'] ?>" class="btn btn-success">Konfirmasi Pengembalian</a>
-                                <?php endif; ?>
-                            </td>
+                            <td><?= $pmj['tgl_kembali']; ?></td>
                         </tr>
                         <?php $i++; ?>
                     <?php endforeach; ?>
