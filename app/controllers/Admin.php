@@ -41,4 +41,24 @@ class Admin extends Controller {
         $this->model('Buku_model')->hapusBuku($id);
         header('Location: ' . BASEURL . '/admin/daftar_buku');
     }
+
+    public function daftar_peminjaman()
+    {
+        $data['judul'] = 'Daftar Peminjaman';
+        // ambil semua data dari tabel peminjaman
+        $data['peminjaman'] = $this->model('Peminjaman_model')->getAllPeminjaman();
+        $this->view('admin/templates/header', $data);
+        $this->view('admin/daftar_peminjaman', $data);
+        $this->view('admin/templates/footer');
+    }
+
+    public function konfirmasi_pengembalian($id_peminjaman)
+    {
+        $data['id_peminjaman'] = $id_peminjaman;
+        $data['tgl_kembali'] = date('Y-m-d');
+        $data['status'] = 0; // set status peminjaman 0 = buku sudah dikembalikan
+        $this->model('Peminjaman_model')->updatePeminjaman($data);
+        header('Location: ' . BASEURL . '/admin/daftar_peminjaman');
+        exit;
+    }
 }

@@ -9,6 +9,15 @@ class Peminjaman_model {
         $this->db = new Database;
     }
 
+    public function getAllPeminjaman()
+    {
+        $this->db->query('SELECT * FROM ' . $this->table .
+                        " JOIN data_anggota ON peminjaman.id_anggota = data_anggota.id
+                            JOIN data_buku ON peminjaman.id_buku = data_buku.id
+                            WHERE status != '0'");
+        return $this->db->resultSet();
+    }
+
     public function addPeminjaman($data)
     {
         $query = "INSERT INTO " . $this->table . "
