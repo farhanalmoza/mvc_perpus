@@ -8,4 +8,12 @@ class Auth extends Controller {
             exit;
         }
     }
+
+    public function regis_admin()
+    {
+        if ( $this->model('Admin_model')->registerUser($_POST) > 0 ) {
+            header('Location: ' . BASEURL . '/login/admin');
+            exit;
+        }
+    }
 }
