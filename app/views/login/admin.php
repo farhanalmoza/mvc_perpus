@@ -18,21 +18,21 @@
                         <h3 class="panel-title align-item-center">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form>
+                        <form action="<?= BASEURL; ?>/auth/login_admin" method="POST">
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <input type="email" id="form2Example1" class="form-control" />
-                                <label class="form-label" for="form2Example1">Email address</label>
+                                <input type="email" id="email" name="email" class="form-control" />
+                                <label class="form-label" for="email">Email address</label>
                             </div>
 
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <input type="password" id="form2Example2" class="form-control" />
-                                <label class="form-label" for="form2Example2">Password</label>
+                                <input type="password" id="password" name="password" class="form-control" />
+                                <label class="form-label" for="password">Password</label>
                             </div>
 
                             <!-- Submit button -->
-                            <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+                            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
                             <!-- Register buttons -->
                             <div class="text-center">

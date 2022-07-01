@@ -9,7 +9,7 @@ class User_model {
         $this->db = new Database;
     }
 
-    public function getAllUser()
+    public function getAllAnggota()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();
@@ -29,6 +29,16 @@ class User_model {
         $this->db->bind('ttl', '');
         $this->db->bind('alamat', '');
         $this->db->bind('foto', '');
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    public function hapusAnggota($id)
+    {
+        $this->db->query('DELETE FROM ' . $this->table . ' WHERE id = :id');
+        $this->db->bind('id', $id);
 
         $this->db->execute();
 
