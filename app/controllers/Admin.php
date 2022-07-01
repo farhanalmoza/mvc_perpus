@@ -25,4 +25,20 @@ class Admin extends Controller {
         $this->model('User_model')->hapusAnggota($id);
         header('Location: ' . BASEURL . '/admin/daftar_anggota');
     }
+
+    public function daftar_buku()
+    {
+        $data['judul'] = 'Daftar Buku';
+        // ambil semua data dari tabel buku
+        $data['buku'] = $this->model('Buku_model')->getAllBuku();
+        $this->view('admin/templates/header', $data);
+        $this->view('admin/daftar_buku', $data);
+        $this->view('admin/templates/footer');
+    }
+
+    public function hapus_buku($id)
+    {
+        $this->model('Buku_model')->hapusBuku($id);
+        header('Location: ' . BASEURL . '/admin/daftar_buku');
+    }
 }
